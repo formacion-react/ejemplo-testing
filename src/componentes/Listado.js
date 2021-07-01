@@ -1,14 +1,15 @@
-import { useContext } from "react";
-import { DatosContext } from "../contextos/DatosContext";
 import { Dato } from "./Dato";
 
-export const Listado = () => {
-  const { datos } = useContext(DatosContext);
+export const Listado = (props) => {
+  const { datos } = props;
   return (
-    <ul>
-      {datos.map((dato) => (
-        <Dato key={dato.id} dato={dato} />
-      ))}
-    </ul>
+    <>
+      <h1>Listado de personas</h1>
+      <ul>
+        {datos.map((dato) => (
+          <Dato key={dato.id} dato={dato} />
+        ))}
+      </ul>
+    </>
   );
 };
